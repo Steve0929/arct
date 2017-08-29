@@ -318,8 +318,7 @@ crossorigin="anonymous"></script>
   
 
         socket.on('nueva rotacion' ,function(data){
-            zz= data.rot;
-            rotarElCirculo(zz);
+            rotarElCirculo(data.rot);
         });  
 
 
@@ -458,7 +457,10 @@ crossorigin="anonymous"></script>
             parti.rotation.x += 0.001;
             parti.rotation.y -= 0.0040;
 
+var rotarElCirculo = function(z) {
 
+        circle.rotation.z = z;
+              };
 
 
 
@@ -467,14 +469,12 @@ crossorigin="anonymous"></script>
 
      window.addEventListener('deviceorientation', function(event) {
         var socket = io.connect();
-        var zz = event.alpha;        
+        var zz = ((event.alpha)/50);          
         socket.emit('rota', zz);
     
                 });
-      var rotarElCirculo = function(z) {
-
-            circle.rotation.z = z/30; // divido 50 para mayor fluidez
-              };
+  
+      
   
      
     /*  window.addEventListener('deviceorientation', function(event) {
