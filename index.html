@@ -313,11 +313,11 @@ crossorigin="anonymous"></script>
 
        //Rotar el circulo
 
-       $('#canvas').on('touchstart click', function(){   socket.emit('rota', z);});
+       $("#canvas").on("swipeleft",function(){   socket.emit('rota', z);});
 
-        window.addEventListener("click", function(){
+        /* window.addEventListener("click", function(){
         socket.emit('rota', z);
-      });
+      }); */
 
           socket.on('nueva rotacion' ,function(data){
           z= data.rot;
