@@ -314,8 +314,9 @@ crossorigin="anonymous"></script>
        //Rotar el circulo
 
     /*   $("#canvas").on("swipeleft",function(){   socket.emit('rota', z);}); */
+      //$('#whatever').on('touchstart click', function(){   socket.emit('rota', z); });
 
-        window.addEventListener("click", function(){
+        window.addEventListener("click tap" , function(){
         socket.emit('rota', z);
       });
 
