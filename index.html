@@ -342,8 +342,10 @@ crossorigin="anonymous"></script>
     			var camera, scene, renderer,
     			birds, bird,circle,estructura,parti;
 
-
-
+            var rotarElCirculo = function(z) {
+            circle.rotation.z = z/50;
+              };
+   
           window.onload = function() {
             init();
             animate();
@@ -409,9 +411,7 @@ crossorigin="anonymous"></script>
     				scene.add( lights[2] );
              
              
-           var rotarElCirculo = function(z) {
-            circle.rotation.z = z/50;
-              };
+        
 
             
             for (var i = 0; i < 280; i++) {
