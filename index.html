@@ -27,6 +27,9 @@
 <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+
+
+
 </head>
 
 <style>
@@ -56,6 +59,35 @@ height: 250px;
 
 }
 
+.colores{
+
+background: #C9F0FF;
+
+}
+
+.colores2{
+background-image: url("img/coin.jpg");
+
+}
+
+.chat{
+  width: 40%;
+  margin-left: 60%;
+}
+
+.form-control{
+  width: 40% !important;
+  margin-left: 60%;
+
+}
+
+.well{
+background: #ABEDC6 !important;
+border-radius: 13px !important;
+
+}
+
+
 .buttonin-index{
 width: 80%;
 height: 50px;
@@ -71,6 +103,19 @@ float: left;
 }
 
 @media only screen and (max-device-width: 480px) {
+
+
+.chat{
+width: 100%;
+margin-left: 0px;
+  }
+
+.form-control{
+width: 100% !important;
+margin-left: 0px;
+
+            }
+
 .img-circle-small{
 width: 20%;
 height: 20%;
@@ -172,9 +217,9 @@ crossorigin="anonymous">
 <!-- END bootstrap  -->
 <!-- fa ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <!-- bootstrap Script Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -188,19 +233,23 @@ crossorigin="anonymous"></script>
 
 <body>
 
-  <div class="container-fluid">
-        <h3>  <p align="center">Personas conectadas: </p></h3>
+<!--
+  <div class="container-fluid colores">
+        <h2>  <p align="center">Personas conectadas: </p></h2>
         <p> &nbsp; </p>
           <p> &nbsp; </p>
         <ul class="list-group" id="usuarios"> </ul>
+  </div>   !-->
 
-        <div class="chat" id="chat"> chat</div>
+  <div class="container-fluid colores2">
 
-          <form id="messageForm">
-            <div class="form-group">
-              <label>Ingresa tu mensaje </label>
-              <textarea class="form-control" id="mensaje">  </textarea>
+        <div class="chat" id="chat"><h2><span class="label label-info">Envía un mensaje:</span></h2></div>
+            <br>
+            <form id="messageForm">
+             <div class="form-group">
+              <textarea class="form-control"  id="mensaje">  </textarea>
                 <br>
+                  <br>
                 <p align="center"><input type="submit"  class="button buttonin-index"  value="Enviar Mensaje"></p>
 
             </div>
@@ -230,11 +279,12 @@ crossorigin="anonymous"></script>
         <p class="footer-links">
         Términos y Condiciones </p>
         <p class="footer-company-name">Copyright © 2017 T-Corp. Todos los derechos reservados</p>
+        <a href="https://uniarcorn.000webhostapp.com/index.php"><p class="footer-company-name">Find My Stuff</p></a>
 
         </div>
 
         <div class="footer-right">
-        <p class="footer-links"> Powered by ARCT  </p >   <img   src="img/unicorn.png" class="img-circle-small"   width="10%" height="10%">
+        <p class="footer-links"> Powered by ARCT & Uniarcorn </p >   <img   src="img/unicorn.png" class="img-circle-small"   width="10%" height="10%">
 
         </div>
 
@@ -248,12 +298,14 @@ crossorigin="anonymous"></script>
         var $msgForm = $('#messageForm');
         var $mensaje = $('#mensaje');
         var $chat = $('#chat');
+        var z = -300;
 
         $msgForm.submit(function(e){
           e.preventDefault();
           console.log("enviado");
           socket.emit('send message' , $mensaje.val());
           $mensaje.val(''); //limpiar la variable mensaje
+
                });
 
         socket.on('new message', function(data){
@@ -262,6 +314,34 @@ crossorigin="anonymous"></script>
 
         });
 
+       //Rotar el circulo
+
+      $("#canvas").on("swiperight",function(){
+           alert("You swiped left!");
+         socket.emit('rota', z);
+        });
+
+        /* window.addEventListener("click", function(){
+        socket.emit('rota', z);
+      }); */
+
+          socket.on('nueva rotacion' ,function(data){
+          z= data.rot;
+          rotarElCirculo(z);
+
+        });
+
+ /*
+        window.addEventListener('deviceorientation', function(event) {
+        //  circle.rotation.z = ((event.alpha)/50);
+        z = ((event.alpha)/50)); // divido 50 para mayor fluidez
+        socket.emit('rota', z);
+                });
+
+        socket.on('nueva rotacion' ,function(data){
+            z= data.rot;
+            rotarElCirculo(z);
+        });  */
 
 
 
@@ -269,11 +349,9 @@ crossorigin="anonymous"></script>
       </script>
 
 
-<script src="js/111/three.js"></script>
+
 <script src="js/renderers/Projector.js"></script>
 <script src="js/renderers/CanvasRenderer.js"></script>
-<script src="js/libs/stats.min.js"></script>
-<script src="obj/Bird.js"></script>
 <script>
 
     			var SCREEN_WIDTH = window.innerWidth,
@@ -373,6 +451,11 @@ crossorigin="anonymous"></script>
     				 document.getElementById('canvas').appendChild(renderer.domElement);
     			}
 
+          var rotarElCirculo = function(z) {
+
+            circle.rotation.z += z/50;
+              };
+
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
@@ -404,11 +487,12 @@ crossorigin="anonymous"></script>
     				renderer.render( scene, camera );
     			}
 
-     window.addEventListener('deviceorientation', function(event) {
+
+    /*  window.addEventListener('deviceorientation', function(event) {
 
                  circle.rotation.z = ((event.alpha)/50);
 
-                });
+               }); */
 
     function spawn() {
         for (var i = 0; i < 80; i++) {
