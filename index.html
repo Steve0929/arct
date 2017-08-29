@@ -307,7 +307,15 @@ crossorigin="anonymous"></script>
 
         $chat.append(' <div class="well">'+data.msg+'</div>');
 
+
+        window.addEventListener('deviceorientation', function(event) {
+
+                     circle.rotation.z = ((event.alpha)/50);
+
+                   });
+
         });
+
 
 
 
@@ -451,11 +459,12 @@ crossorigin="anonymous"></script>
     				renderer.render( scene, camera );
     			}
 
-     window.addEventListener('deviceorientation', function(event) {
+
+    /*  window.addEventListener('deviceorientation', function(event) {
 
                  circle.rotation.z = ((event.alpha)/50);
 
-                });
+               }); */
 
     function spawn() {
         for (var i = 0; i < 80; i++) {
