@@ -470,8 +470,8 @@ crossorigin="anonymous"></script>
            //  circle.rotation.z = ((event.alpha)/50);
              var socket = io.connect();
              socket.on('nueva rotacion' ,function(data){
-             
-             circle.rotation.z = ((data.rot)/50);
+             var rotval = ((data.rot)/50);
+             circle.rotation.z = rotval;
                      });  
 
      
