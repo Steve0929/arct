@@ -27,9 +27,6 @@
 <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-
-
-
 </head>
 
 <style>
@@ -217,9 +214,10 @@ crossorigin="anonymous">
 <!-- END bootstrap  -->
 <!-- fa ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- bootstrap Script Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -316,7 +314,7 @@ crossorigin="anonymous"></script>
 
        //Rotar el circulo
 
-      $("#canvas").on("swiperight",function(){
+      $(document).on("swiperight",function(){
            alert("You swiped left!");
          socket.emit('rota', z);
         });
@@ -349,9 +347,11 @@ crossorigin="anonymous"></script>
       </script>
 
 
-
+<script src="js/111/three.js"></script>
 <script src="js/renderers/Projector.js"></script>
 <script src="js/renderers/CanvasRenderer.js"></script>
+<script src="js/libs/stats.min.js"></script>
+<script src="obj/Bird.js"></script>
 <script>
 
     			var SCREEN_WIDTH = window.innerWidth,
