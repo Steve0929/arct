@@ -321,7 +321,7 @@ crossorigin="anonymous"></script>
                    });
 
         socket.on('nueva rotacion' ,function(data){
-            circle.rotation.z = ((event.alpha)/50);
+            circle.rotation.z = data.rot;
         });
 
 
