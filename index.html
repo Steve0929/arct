@@ -314,12 +314,7 @@ crossorigin="anonymous"></script>
         });
 
             
-        window.addEventListener('deviceorientation', function(event) {
-       
-        var zz = event.alpha;        
-        socket.emit('rota', zz);
-    
-                });
+   
   
 
         socket.on('nueva rotacion' ,function(data){
@@ -473,7 +468,12 @@ crossorigin="anonymous"></script>
     				renderer.render( scene, camera );
     			}
 
-
+     window.addEventListener('deviceorientation', function(event) {
+       
+        var zz = event.alpha;        
+        socket.emit('rota', zz);
+    
+                });
     /*  window.addEventListener('deviceorientation', function(event) {
 
                  circle.rotation.z = ((event.alpha)/50);
