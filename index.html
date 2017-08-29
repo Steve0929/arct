@@ -47,7 +47,7 @@ height: 250px;
 }
 
 #canvas{
-
+  display: none;
   background: #11e8bb; /* Old browsers */
   background: -moz-linear-gradient(top,  #11e8bb 0%, #8200c9 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  #11e8bb 0%,#8200c9 100%); /* Chrome10-25,Safari5.1-6 */
@@ -430,11 +430,10 @@ crossorigin="anonymous"></script>
 
     <script>
 $(document).ready(function(){
-    $("#canvas").hide();
     var flag = false;
 
     $("#iniciaBoton").click(function(){
-
+    $('#iniciaBoton').removeClass('hidden');
     flag = !flag;
 
     if(flag==false){
