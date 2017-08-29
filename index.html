@@ -315,8 +315,9 @@ crossorigin="anonymous"></script>
 
         window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
+        var z = ((event.alpha)/50));
 
-        socket.emit('rota', ((event.alpha)/50));
+        socket.emit('rota', z);
 
                    });
 
