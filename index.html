@@ -432,10 +432,7 @@ crossorigin="anonymous"></script>
     				 document.getElementById('canvas').appendChild(renderer.domElement);
     			}
 
-          var rotarElCirculo = function(z) {
-
-            circle.rotation.z += z/50; // divido 50 para mayor fluidez
-              };
+        
 
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -468,6 +465,12 @@ crossorigin="anonymous"></script>
     				renderer.render( scene, camera );
     			}
 
+  
+      var rotarElCirculo = function(z) {
+
+            circle.rotation.z += z/50; // divido 50 para mayor fluidez
+              };
+  
      window.addEventListener('deviceorientation', function(event) {
         var socket = io.connect();
         var zz = event.alpha;        
