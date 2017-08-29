@@ -1,0 +1,273 @@
+
+
+<html>
+<head>
+<title>THREE-NODE-IO</title>
+<link rel="stylesheet" type="text/css" href="css/css.html">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="viewport" content="width=device-width">
+</head>
+
+<style>
+
+
+body {
+  line-height: 0;
+
+     margin: auto;
+     padding-top: 0px;
+     max-width:2000px;
+     width: 100%;
+
+
+ }
+
+#map{
+height: 250px;
+width: 650px;
+
+}
+
+.buttonin-index{
+width: 80%;
+height: 10%;
+
+
+}
+.pulla-right{
+
+  float: right;
+  padding-right: 20px;
+}
+
+.pulla-left{
+
+  float: left;
+}
+
+ @media only screen and (max-device-width: 480px) {
+   .img-circle-small{
+     width: 20%;
+     height: 20%;
+   }
+
+   .img-circle{
+     width: 45%;
+     height: 45%;
+   }
+   .pulla-right{
+
+     float: none;
+   }
+
+   .pulla-left{
+
+     float: none;
+   }
+
+   .circ{
+
+     width: 150px;
+     height: 100px;
+     position: relative;
+      margin:0 auto;
+     margin-top: 10px;
+       padding-left: 25px;
+
+   }
+
+   .circ>img{
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+
+   }
+
+.pull-right{
+  padding-right: 0px;
+  padding: 0px;
+  float: none;
+
+}
+.pull-left{
+  padding-left: 0px;
+  float: none;
+}
+
+.container-fluidend {
+                padding-top: 50px;
+                padding-bottom: 150px;
+ opacity: 1;
+ width: 100%;
+
+                }
+  .formula{
+
+
+         width: 80%;
+         height: auto;
+         background: #add;
+
+         max-width: 1500px;
+
+           }
+
+           .formulaModal{
+           width: 100%;
+           max-width: 500px;
+           height: auto;
+           position: absolute;
+           padding: 10px 25px;
+           background: #eee;
+           margin-top: 270px;
+             box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+             left: 50%;
+             top: 50%;
+             transform: translateX(-50%) translateY(-50%);
+
+             border-radius: 4px;
+
+           }
+           .button-block{
+
+           width: 100%;
+
+           height: 100%;
+           display: block;
+
+           }
+           .buttonin {
+           width: 100%;
+
+           }
+
+
+
+           .errorCredenciales2{
+           font-size: 16px;
+           font-family: sans-serif,Arial;
+           color:red;
+           margin-top: 5px;
+           width: 38%;
+           padding-left: 4px;
+           margin-left: -5px;
+           background: pink;
+           }
+
+           .errorCredenciales3{
+           font-size: 16px;
+
+           color:pink;
+           margin-top: 5px;
+           width: 100%;
+           background: #7F2982;
+
+           }
+
+
+}
+
+
+</style>
+
+<script src="/socket.io/socket.io.js"></script>
+<!-- bootstrap Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+crossorigin="anonymous">
+<!-- END bootstrap  -->
+<!-- fa ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- bootstrap Script Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+<!-- END bootstrap Script -->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>  </script>
+<script src="js/index.js"></script>
+
+
+<script src="JQuery/jquery-3.1.1.js"> </script>
+
+<body>
+
+  <div class="container-fluid">
+        <h3>  <p align="center">Personas conectadas: </p></h3>
+        <p> &nbsp; </p>
+          <p> &nbsp; </p>
+        <ul class="list-group" id="usuarios"> </ul>
+
+        <div class="chat" id="chat"> chat</div>
+
+          <form id="messageForm">
+            <div class="form-group">
+              <label>Ingresa tu mensaje </label>
+              <textarea class="form-control" id="mensaje">  </textarea>
+                <br>
+                <p align="center"><input type="submit"  class="button buttonin-index"  value="Enviar Mensaje"></p>
+
+            </div>
+        </form>
+
+          <p> &nbsp; </p>
+
+
+</div>
+
+       <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+        <p class="footer-links">
+        Términos y Condiciones
+        </p>
+        <p class="footer-company-name">Copyright © 2017 T-Corp. Todos los derechos reservados</p>
+        </div>
+
+     <div class="footer-right">
+      <p class="footer-links"> Powered by ARCT  </p >   <img   src="img/unicorn.png" class="img-circle-small"   width="10%" height="10%">
+
+      </div>
+
+      </footer>
+
+
+      <script>
+
+      $(function(){
+        var socket = io.connect();
+        var $msgForm = $('#messageForm');
+        var $mensaje = $('#mensaje');
+        var $chat = $('#chat');
+
+        $msgForm.submit(function(e){
+          e.preventDefault();
+          console.log("enviado");
+          socket.emit('send message' , $mensaje.val());
+          $mensaje.val(''); //limpiar la variable mensaje
+               });
+
+        socket.on('new message', function(data){
+
+        $chat.append(' <div class="well">'+data.msg+'</div>');
+
+        });
+
+
+
+
+  });
+      </script>
+
+
+
+</body>
+</html>
