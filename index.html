@@ -407,7 +407,13 @@ crossorigin="anonymous"></script>
     				scene.add( lights[0] );
     				scene.add( lights[1] );
     				scene.add( lights[2] );
+             
+             
+           var rotarElCirculo = function(z) {
+            circle.rotation.z = z/50;
+              };
 
+            
             for (var i = 0; i < 280; i++) {
               var mesh = new THREE.Mesh(geomPart, material);
               mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
@@ -417,7 +423,7 @@ crossorigin="anonymous"></script>
     }
 
 
-
+            
 
 
 
@@ -430,10 +436,6 @@ crossorigin="anonymous"></script>
              window.addEventListener('resize', onWindowResize, false);
     				 document.getElementById('canvas').appendChild(renderer.domElement);
     			}
-
-           var rotarElCirculo = function(z) {
-            circle.rotation.z = z/50;
-              };
 
 
           function onWindowResize() {
