@@ -342,9 +342,7 @@ crossorigin="anonymous"></script>
     			var camera, scene, renderer,
     			birds, bird,circle,estructura,parti;
 
-            var rotarElCirculo = function(z) {
-            circle.rotation.z = z/50;
-              };
+          
    
           window.onload = function() {
             init();
@@ -411,9 +409,6 @@ crossorigin="anonymous"></script>
     				scene.add( lights[2] );
              
              
-        
-
-            
             for (var i = 0; i < 280; i++) {
               var mesh = new THREE.Mesh(geomPart, material);
               mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
@@ -443,6 +438,10 @@ crossorigin="anonymous"></script>
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
           }
+          
+            var rotarElCirculo = function(z) {
+            circle.rotation.z = z/50;
+              };
 
     			function animate() {
 
