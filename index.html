@@ -431,7 +431,10 @@ crossorigin="anonymous"></script>
     				 document.getElementById('canvas').appendChild(renderer.domElement);
     			}
 
-        
+           var rotarElCirculo = function(z) {
+            circle.rotation.z = z;
+              };
+
 
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -457,10 +460,6 @@ crossorigin="anonymous"></script>
             parti.rotation.x += 0.001;
             parti.rotation.y -= 0.0040;
 
-var rotarElCirculo = function(z) {
-
-        circle.rotation.z = z;
-              };
 
 
 
