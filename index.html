@@ -314,8 +314,7 @@ crossorigin="anonymous"></script>
 
             
          socket.on('nueva rotacion' ,function(data){
-     var rotval = ((data.rot)/50);
-     circle.rotation.z = rotval;
+           rotarElCirculo(data.rot);
                                    });  
   
 
