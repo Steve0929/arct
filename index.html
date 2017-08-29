@@ -312,7 +312,7 @@ crossorigin="anonymous"></script>
         });
 
        //Rotar el circulo
-       /*  window.addEventListener("click", function(){
+       window.addEventListener("click", function(){
         socket.emit('rota', z);
             });
 
@@ -320,9 +320,9 @@ crossorigin="anonymous"></script>
           var z= data.rot;
           rotarElCirculo(z);
 
-        }); */
+        });
 
-
+ /* 
         window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
         var z = ((event.alpha)/50)); // divido 50 para mayor fluidez
@@ -332,7 +332,7 @@ crossorigin="anonymous"></script>
         socket.on('nueva rotacion' ,function(data){
             var z= data.rot;
             rotarElCirculo(z);
-        });
+        });  */
 
 
 
