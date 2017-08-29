@@ -301,6 +301,7 @@ crossorigin="anonymous"></script>
           console.log("enviado");
           socket.emit('send message' , $mensaje.val());
           $mensaje.val(''); //limpiar la variable mensaje
+
                });
 
         socket.on('new message', function(data){
@@ -308,15 +309,20 @@ crossorigin="anonymous"></script>
         $chat.append(' <div class="well">'+data.msg+'</div>');
 
 
-        window.addEventListener('deviceorientation', function(event) {
 
-                     circle.rotation.z = ((event.alpha)/50);
-
-                   });
 
         });
 
+        window.addEventListener('deviceorientation', function(event) {
+        //  circle.rotation.z = ((event.alpha)/50);
 
+        socket.emit('rota', ((event.alpha)/50));
+
+                   });
+
+        socket.on('nueva rotacion' ,function(data){
+            circle.rotation.z = ((event.alpha)/50);
+        });
 
 
 
