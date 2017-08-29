@@ -467,8 +467,12 @@ crossorigin="anonymous"></script>
       
      window.addEventListener('deviceorientation', function(event) {
                
-              circle.rotation.z = ((event.alpha)/50);
-            
+           //  circle.rotation.z = ((event.alpha)/50);
+             var socket = io.connect();
+             socket.on('nueva rotacion' ,function(data){
+             circle.rotation.z = ((data.rot)/50);;
+                     });  
+
      
 
 
