@@ -295,6 +295,7 @@ crossorigin="anonymous"></script>
         var $msgForm = $('#messageForm');
         var $mensaje = $('#mensaje');
         var $chat = $('#chat');
+        var z = -300;
 
         $msgForm.submit(function(e){
           e.preventDefault();
@@ -308,21 +309,29 @@ crossorigin="anonymous"></script>
 
         $chat.append(' <div class="well">'+data.msg+'</div>');
 
-
-
-
         });
+
+       //Rotar el circulo
+       /*  window.addEventListener("click", function(){
+        socket.emit('rota', z);
+            });
+
+          socket.on('nueva rotacion' ,function(data){
+          var z= data.rot;
+          rotarElCirculo(z);
+
+        }); */
+
 
         window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
-        var z = ((event.alpha)/50));
-
+        var z = ((event.alpha)/50)); // divido 50 para mayor fluidez
         socket.emit('rota', z);
-
-                   });
+                });
 
         socket.on('nueva rotacion' ,function(data){
-            circle.rotation.z = data.rot;
+            var z= data.rot;
+            rotarElCirculo(z);
         });
 
 
@@ -434,6 +443,11 @@ crossorigin="anonymous"></script>
              window.addEventListener('resize', onWindowResize, false);
     				 document.getElementById('canvas').appendChild(renderer.domElement);
     			}
+
+          var rotarElCirculo = function(z) {
+
+            circle.rotation.z += z/50;
+              };
 
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
