@@ -312,25 +312,28 @@ crossorigin="anonymous"></script>
         });
 
        //Rotar el circulo
-       window.addEventListener("click", function(){
+
+       $('#canvas').on('touchstart click', function(){   socket.emit('rota', z);});
+
+    /*   window.addEventListener("click", function(){
         socket.emit('rota', z);
-            });
+      });  */
 
           socket.on('nueva rotacion' ,function(data){
-          var z= data.rot;
+          z= data.rot;
           rotarElCirculo(z);
 
         });
 
- /* 
+ /*
         window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
-        var z = ((event.alpha)/50)); // divido 50 para mayor fluidez
+        z = ((event.alpha)/50)); // divido 50 para mayor fluidez
         socket.emit('rota', z);
                 });
 
         socket.on('nueva rotacion' ,function(data){
-            var z= data.rot;
+            z= data.rot;
             rotarElCirculo(z);
         });  */
 
