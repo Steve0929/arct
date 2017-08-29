@@ -313,10 +313,19 @@ crossorigin="anonymous"></script>
 
         });
 
-         window.addEventListener('deviceorientation', function(event) {
+        
+         function deviceOrientationHandler(tiltLR, tiltFB, dir, motionUD) {
+          if(registered){
+          z= tiltLR;  
+          socket.emit('rota', z);
+                         }
+            }
+        
+        window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
         z = event.alpha;
-        if(z>30){
+       
+         if(z>30){
           
         socket.emit('rota', z);
         }
