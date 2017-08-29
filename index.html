@@ -442,7 +442,7 @@ crossorigin="anonymous"></script>
              renderer.setClearColor(0x000000, 0.0);
 
              window.addEventListener('resize', onWindowResize, false);
-    				 document.getElementById('canvas').appendChild(renderer.domElement);
+    				 document.getElementById('canvasContainer').appendChild(renderer.domElement);
     			}
 
           var rotarElCirculo = function(z) {
@@ -454,7 +454,7 @@ crossorigin="anonymous"></script>
            container = document.getElementById('Canvascontainer');          
            camera.aspect = window.innerWidth / window.innerHeight;
            camera.updateProjectionMatrix();
-           renderer.setSize(100%, window.innerHeight);
+           renderer.setSize(window.innerWidth, window.innerHeight);
           }
 
     			function animate() {
