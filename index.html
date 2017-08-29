@@ -313,11 +313,11 @@ crossorigin="anonymous"></script>
 
        //Rotar el circulo
 
-       $("#canvas").on("swipeleft",function(){   socket.emit('rota', z);});
+    /*   $("#canvas").on("swipeleft",function(){   socket.emit('rota', z);}); */
 
-        /* window.addEventListener("click", function(){
+        window.addEventListener("click", function(){
         socket.emit('rota', z);
-      }); */
+      });
 
           socket.on('nueva rotacion' ,function(data){
           z= data.rot;
@@ -328,7 +328,7 @@ crossorigin="anonymous"></script>
  /*
         window.addEventListener('deviceorientation', function(event) {
         //  circle.rotation.z = ((event.alpha)/50);
-        z = ((event.alpha)/50)); // divido 50 para mayor fluidez
+        z = (event.alpha);
         socket.emit('rota', z);
                 });
 
@@ -449,7 +449,7 @@ crossorigin="anonymous"></script>
 
           var rotarElCirculo = function(z) {
 
-            circle.rotation.z += z/50;
+            circle.rotation.z += z/50; // divido 50 para mayor fluidez
               };
 
           function onWindowResize() {
