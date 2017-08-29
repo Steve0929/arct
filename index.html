@@ -461,24 +461,16 @@ crossorigin="anonymous"></script>
         var socket = io.connect();
         var ea = event.alpha;          
         socket.emit('rota', ea);
-    
+       
+     socket.on('nueva rotacion' ,function(data){
+     var rotval = ((data.rot)/50);
+     circle.rotation.z = rotval;
+                                   });  
+     
                 }); 
   
-      
-     window.addEventListener('deviceorientation', function(event) {
-               
-           //  circle.rotation.z = ((event.alpha)/50);
-             var socket = io.connect();
-             socket.on('nueva rotacion' ,function(data){
-             var rotval = ((data.rot)/50);
-             circle.rotation.z = rotval;
-                     });  
 
-     
-
-
-               }); 
-
+         
     function spawn() {
         for (var i = 0; i < 80; i++) {
               var mesh = new THREE.Mesh(geomPart, material);
