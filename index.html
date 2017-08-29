@@ -257,7 +257,7 @@ crossorigin="anonymous"></script>
         </div>
 
 
-        <div style="container-fluid colorin">
+        <div style="container-fluid colorin"  id="canvasContainer">
 
          <div id="canvas">
             <p> &nbsp; </p>
@@ -451,9 +451,14 @@ crossorigin="anonymous"></script>
               };
 
           function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            container = document.getElementById('Canvascontainer');
+            renderer.setSize($(container).width(), $(container).height());
+            container.appendChild(renderer.domElement);
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+          //  camera.aspect = window.innerWidth / window.innerHeight;
+            //camera.updateProjectionMatrix();
+            //renderer.setSize(window.innerWidth, window.innerHeight);
           }
 
     			function animate() {
