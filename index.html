@@ -432,7 +432,7 @@ crossorigin="anonymous"></script>
     			}
 
            var rotarElCirculo = function(z) {
-            circle.rotation.z = z;
+            circle.rotation.z = z/50;
               };
 
 
@@ -468,7 +468,7 @@ crossorigin="anonymous"></script>
 
      window.addEventListener('deviceorientation', function(event) {
         var socket = io.connect();
-        var zz = ((event.alpha)/50);          
+        var zz = event.alpha;          
         socket.emit('rota', zz);
     
                 });
