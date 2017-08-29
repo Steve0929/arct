@@ -315,9 +315,9 @@ crossorigin="anonymous"></script>
 
        $('#canvas').on('touchstart click', function(){   socket.emit('rota', z);});
 
-    /*   window.addEventListener("click", function(){
+        window.addEventListener("click", function(){
         socket.emit('rota', z);
-      });  */
+      });
 
           socket.on('nueva rotacion' ,function(data){
           z= data.rot;
