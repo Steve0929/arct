@@ -451,14 +451,10 @@ crossorigin="anonymous"></script>
               };
 
           function onWindowResize() {
-            container = document.getElementById('Canvascontainer');
-            renderer.setSize($(container).width(), $(container).height());
-            container.appendChild(renderer.domElement);
-            camera.updateProjectionMatrix();
-            
-          //  camera.aspect = window.innerWidth / window.innerHeight;
-            //camera.updateProjectionMatrix();
-            //renderer.setSize(window.innerWidth, window.innerHeight);
+           container = document.getElementById('Canvascontainer');          
+           camera.aspect = window.innerWidth / window.innerHeight;
+           camera.updateProjectionMatrix();
+           renderer.setSize(100%, window.innerHeight);
           }
 
     			function animate() {
