@@ -431,13 +431,13 @@ crossorigin="anonymous"></script>
              window.addEventListener('resize', onWindowResize, false);
     				 document.getElementById('canvas').appendChild(renderer.domElement);
 
-             var rotarElCirculo = function(z) {
-                 circle.rotation.z = z;
-                                            };
+        
 
     			}//fin INIT
 
-
+          var rotarElCirculo = function(z) {
+              circle.rotation.z = z;
+                                         };
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
