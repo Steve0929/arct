@@ -467,6 +467,7 @@ crossorigin="anonymous"></script>
             
                 var ea = event.alpha;
                 socket.emit('rota', ea);
+                console.log("aqui");
                 circle.rotation.z = ((event.alpha)/50);
               });
 
