@@ -312,11 +312,24 @@ crossorigin="anonymous"></script>
 
         });
 
-            
+
+        window.addEventListener('deviceorientation', function(event) {
+          
+             var ea = event.alpha;          
+             socket.emit('rota', ea);
+                
+                     }); 
+       
+
+      
          socket.on('nueva rotacion' ,function(data){
            rotarElCirculo(data.rot);
                                    });  
-  
+
+                                   
+        var rotarElCirculo = function(p) {
+            circle.rotation.z = p/50;
+                                       };
 
 
   });
@@ -422,7 +435,7 @@ crossorigin="anonymous"></script>
 
              window.addEventListener('resize', onWindowResize, false);
     				 document.getElementById('canvas').appendChild(renderer.domElement);
-    			}
+    			}//fin INIT
 
 
           function onWindowResize() {
@@ -430,10 +443,7 @@ crossorigin="anonymous"></script>
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
           }
-          
-            var rotarElCirculo = function(z) {
-            circle.rotation.z = z/50;
-              };
+    
 
     			function animate() {
 
@@ -459,23 +469,9 @@ crossorigin="anonymous"></script>
     				renderer.render( scene, camera );
     			}
 
-   window.addEventListener('deviceorientation', function(event) {
-        var socket = io.connect();
-        var ea = event.alpha;          
-        socket.emit('rota', ea);
-           
-                }); 
-  
 
-         
-    function spawn() {
-        for (var i = 0; i < 80; i++) {
-              var mesh = new THREE.Mesh(geomPart, material);
-              mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
-              mesh.position.multiplyScalar(90 + (Math.random() * 700));
-              mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
-              parti.add(mesh);
-                                           }
+
+      
 
     }
 
