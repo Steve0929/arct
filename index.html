@@ -472,10 +472,16 @@ crossorigin="anonymous"></script>
 
           window.addEventListener('deviceorientation', function(event) {
 
+                circle.rotation.z = ((event.alpha)/50);
+
+              });
+
+        /*   window.addEventListener('deviceorientation', function(event) {
+
                var ea = event.alpha;
                socket.emit('rota', ea);
         
-             });
+             }); */
 
 
 //fin threejs
