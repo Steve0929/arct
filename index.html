@@ -313,13 +313,7 @@ crossorigin="anonymous"></script>
         });
 
 
-        window.addEventListener('deviceorientation', function(event) {
-            alert.dialog("device si");
-             var ea = event.alpha;
-             socket.emit('rota', ea);
-
-           });
-
+      
         
 
          socket.on('nueva rotacion' ,function(data){
@@ -334,6 +328,14 @@ crossorigin="anonymous"></script>
 
 
   });
+
+  window.addEventListener('deviceorientation', function(event) {
+      alert.dialog("device si");
+       var ea = event.alpha;
+       socket.emit('rota', ea);
+
+     });
+
       </script>
 
 <script src="js/renderers/Projector.js"></script>
