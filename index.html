@@ -324,6 +324,7 @@ crossorigin="anonymous"></script>
 
          socket.on('nueva rotacion' ,function(data){
            var pasar = data.rot;
+             circle.rotation.z = pasar;
            rotarElCirculo(pasar);
                                    });
 
