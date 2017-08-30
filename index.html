@@ -313,15 +313,6 @@ crossorigin="anonymous"></script>
         });
 
 
-      
-        
-
-         socket.on('nueva rotacion' ,function(data){
-           var pasar = data.rot;
-           rotarElCirculo(pasar); 
-                                   });
-
-
     
 
   });
@@ -478,6 +469,12 @@ crossorigin="anonymous"></script>
                 socket.emit('rota', ea);
                 circle.rotation.z = ((event.alpha)/50);
               });
+
+
+              socket.on('nueva rotacion' ,function(data){
+                var pasar = data.rot;
+                  circle.rotation.z = (pasar);
+                                        });
 
 
             });
