@@ -296,7 +296,7 @@ crossorigin="anonymous"></script>
         var $msgForm = $('#messageForm');
         var $mensaje = $('#mensaje');
         var $chat = $('#chat');
-        var z = 0;
+        var z = 110;
 
         $msgForm.submit(function(e){
           e.preventDefault();
@@ -322,8 +322,8 @@ crossorigin="anonymous"></script>
                                    });
 
 
-        var rotarElCirculo = function(w) {
-            circle.rotation.z = w/50;
+        var rotarElCirculo = function(z) {
+            circle.rotation.z = z/50;
                                        };
 
 
