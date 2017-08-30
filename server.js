@@ -42,6 +42,12 @@ app.get('/', function(req, res){
         io.sockets.emit('nueva rotacion', {rot: data});
 
                                             });
+       //cambio de color
+       socket.on('cc',function(data){
+       io.sockets.emit('nuevo color', {color: data}) ;
+
+       });
+
 
 
 });

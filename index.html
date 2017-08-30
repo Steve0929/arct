@@ -267,6 +267,7 @@ crossorigin="anonymous"></script>
             <h2><p align="center" style="color: white;">Explora
             <br>Envía un mensaje a alguien<br>¡Y luego Gira tu celular!</p></h2>
             <br> <p align="center" style="color: white;"> Da click para comenzar </p>
+            <p align="center"><input type="button" id="colorBoton"  class="button buttonin-index"  value="Cambiar color"></p>
          </div>
 
 
@@ -298,7 +299,9 @@ crossorigin="anonymous"></script>
         var $chat = $('#chat');
         var z = 110;
 
+
         $msgForm.submit(function(e){
+
           e.preventDefault();
           console.log("enviado");
           socket.emit('send message' , $mensaje.val());
@@ -311,6 +314,16 @@ crossorigin="anonymous"></script>
         $chat.append(' <div class="well">'+data.msg+'</div>');
 
         });
+
+
+        $("#colorBoton").click(function(){
+          var r = Math.random();
+          socket.emit('cc', r);
+                                        });
+
+        socket.on('nuevo color', function(data){
+              colorCirculo(data.color);
+              });
 
 
 
@@ -333,7 +346,7 @@ crossorigin="anonymous"></script>
     			var camera, scene, renderer,
     			birds, bird,circle,estructura,parti;
           var socket = io.connect();
-
+             var colorCirculo
 
           window.onload = function() {
             init();
@@ -423,8 +436,13 @@ crossorigin="anonymous"></script>
     				 document.getElementById('canvas').appendChild(renderer.domElement);
 
 
+            colorCirculo = function(mirng) {
+            planet.material.color.setHex( mirng* 0xffffff );
+                                      };
 
     			}//fin INIT
+
+
 
           var rotarElCirculo = function(k) {
               circle.rotation.z = k;
