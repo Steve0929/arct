@@ -17,22 +17,31 @@ app.get('/', function(req, res){
 
           });
 
-io.sockets.on('connection', function(socket){
-  conexiones.push(socket);
-  console.log("Conectado: %s sockets conectados", conexiones.length);
 
-//desconexion
-  socket.on('disconnect',function(data){
+    io.sockets.on('connection', function(socket){
+
+    conexiones.push(socket);
+    console.log("Conectado: %s sockets conectados", conexiones.length);
+
+  //desconexion
+    socket.on('disconnect',function(data){
     conexiones.splice(conexiones.indexOf(socket),1);
     console.log('Desonectado: %s sockets conectados',conexiones.length);
                           });
 
     //enviar msj:
-    socket.on('send message',function(data){
+      socket.on('send message',function(data){
       console.log(data);
       io.sockets.emit('new message', {msg: data});
-    
+
                             });
+
+        //enviar alphaz:
+        socket.on('rota',function(data){
+        console.log(data);
+        io.sockets.emit('nueva rotacion', {rot: data});
+
+                                            });
 
 
 });
