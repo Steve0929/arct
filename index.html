@@ -322,10 +322,7 @@ crossorigin="anonymous"></script>
                                    });
 
 
-        var rotarElCirculo = function(z) {
-            circle.rotation.z = z;
-                                       };
-
+    
 
   });
 
@@ -433,6 +430,11 @@ crossorigin="anonymous"></script>
 
              window.addEventListener('resize', onWindowResize, false);
     				 document.getElementById('canvas').appendChild(renderer.domElement);
+
+             var rotarElCirculo = function(z) {
+                 circle.rotation.z = z;
+                                            };
+
     			}//fin INIT
 
 
