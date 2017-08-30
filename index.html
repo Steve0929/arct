@@ -426,8 +426,8 @@ crossorigin="anonymous"></script>
 
     			}//fin INIT
 
-          var rotarElCirculo = function(z) {
-              circle.rotation.z = z;
+          var rotarElCirculo = function(k) {
+              circle.rotation.z = k;
                                          };
           function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -473,11 +473,11 @@ crossorigin="anonymous"></script>
 
 
               socket.on('nueva rotacion' ,function(data){
-                  console.log("aca");
+                console.log("aca");
                 var pasar = data.rot;
-                
-                  circle.rotation.z = (pasar);
-                                        });
+                rotarElCirculo(pasar);
+                //circle.rotation.z = (pasar);
+                                          });
 
 
             });
