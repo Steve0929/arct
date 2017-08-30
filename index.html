@@ -314,7 +314,7 @@ crossorigin="anonymous"></script>
 
 
         window.addEventListener('deviceorientation', function(event) {
-
+            alert.dialog("device si");
              var ea = event.alpha;
              socket.emit('rota', ea);
 
@@ -324,10 +324,13 @@ crossorigin="anonymous"></script>
 
          socket.on('nueva rotacion' ,function(data){
            var pasar = data.rot;
-          circle.rotation.z = pasar/50;
+           rotarElCirculo(pasar); 
                                    });
 
 
+        var rotarElCirculo = function(p) {
+            circle.rotation.z = p/50;
+                                       };
 
 
   });
