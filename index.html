@@ -473,9 +473,10 @@ crossorigin="anonymous"></script>
 
 
               socket.on('nueva rotacion' ,function(data){
-                console.log("aca");
+              
                 var pasar = data.rot;
                 rotarElCirculo(pasar);
+                  console.log("aca");
                 //circle.rotation.z = (pasar);
                                           });
 
