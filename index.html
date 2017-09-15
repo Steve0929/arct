@@ -449,7 +449,9 @@ crossorigin="anonymous"></script>
     				renderer = new THREE.CanvasRenderer({ alpha: true });
     				renderer.setPixelRatio( window.devicePixelRatio );
     				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
-            //renderer.setSize(window.innerWidth, window.innerHeight);
+         //here
+             renderer.setSize(window.innerWidth, window.innerHeight);
+            //ya
              renderer.setClearColor(0x000000, 0.0);
 
              window.addEventListener('resize', onWindowResize, false);
