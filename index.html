@@ -45,9 +45,13 @@ body {
 #map{
 height: 250px;
 }
+  
+#chati{
+display: none;  
+      }
 
 #canvas{
-  display: none;
+  
   background: #11e8bb; /* Old browsers */
   background: -moz-linear-gradient(top,  #11e8bb 0%, #8200c9 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  #11e8bb 0%,#8200c9 100%); /* Chrome10-25,Safari5.1-6 */
@@ -239,7 +243,7 @@ crossorigin="anonymous"></script>
         <ul class="list-group" id="usuarios"> </ul>
   </div>   !-->
 
-  <div class="container-fluid colores2">
+  <div id="chati" class="container-fluid colores2">
 
         <div class="chat" id="chat"><h2><span class="label label-info">Envía un mensaje:</span></h2></div>
             <br>
@@ -254,7 +258,7 @@ crossorigin="anonymous"></script>
         </form>
 
 
-        <p align="center"><input type="button" id="iniciaBoton"  class="button buttonin-index"  value="Universe"></p>
+    
         </div>
 
 
@@ -266,8 +270,9 @@ crossorigin="anonymous"></script>
             <div id="upi"><h1 align="center" style="color: white;">BIENVENIDO</h1></div>
             <h2><p align="center" style="color: white;">Abre la página en tu celular https://arct.herokuapp.com/ 
             <br>¡Y luego Gira tu celular para mover en tiempo real la geometría!<br></p></h2>
-            <br> <p align="center" style="color: white;"> Da click para cambiar el color en tiempo real. </p>
+            <br> <p align="center" style="color: white;"> Da click para cambiar el color en tiempo real. </p>            
             <p align="center"><input type="button" id="colorBoton"  class="button buttonin-index"  value="Cambiar color"></p>
+            <p align="center"><input type="button" id="iniciaBoton"  class="button buttonin-index"  value="Abrir Chat"></p>
          </div>
 
 
@@ -525,12 +530,12 @@ $(document).ready(function(){
     flag = !flag;
 
     if(flag==false){
-        $("#canvas").fadeOut();
+        $("#chati").fadeOut();
 
       }
 
     if(flag==true){
-      $("#canvas").fadeIn();
+      $("#chati").fadeIn();
     }
 
     });
