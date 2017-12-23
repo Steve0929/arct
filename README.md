@@ -5,4 +5,8 @@ This is a small demo using Node.js+Socket.io+Three.js. Open the website on your 
 https://arct.herokuapp.com/
 
 
-!(https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg)
+
+<p align="center">
+  <img src="https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg" width="350"/>
+  <img src="https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg" width="350"/>
+</p>
