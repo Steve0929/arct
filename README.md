@@ -8,5 +8,5 @@ https://arct.herokuapp.com/
 
 <p align="center">
   <img src="https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg" width="350"/>
-  <img src="https://giphy.com/gifs/hd-storm-troopers-1014X8eZiCtBNm" width="350"/>
+  <img src="https://media0.giphy.com/media/1014X8eZiCtBNm/giphy.gif" width="350"/>
 </p>
