@@ -32,5 +32,5 @@ $ node server.js
 [request]: <https://github.com/request/request>
 
 <p align="center">
-  <img src="https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg" width="350"/>
+<img src="https://github.com/Steve0929/arct/blob/master/public/img/arct.gif"/>
 </p>
