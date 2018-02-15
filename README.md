@@ -9,7 +9,7 @@ https://arct.herokuapp.com/
 ### Tech
 
 * [socket.io] - Enables real-time bidirectional event-based communication.
-* [Three.js] - Lightweight 3D library for WebGl.
+* [Three.js] - Lightweight 3D library compatible with WebGl.
 * [node.js] - Backend Server.
 * [Express] - node.js network app framework.
 
