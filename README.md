@@ -8,7 +8,8 @@ https://arct.herokuapp.com/
 
 ### Tech
 
-* [socket.io] - Enables real-time bidirectional event-based communication
+* [socket.io] - Enables real-time bidirectional event-based communication.
+* [Three.js] - Lightweight 3D library for WebGl.
 * [node.js] - Backend Server.
 * [Express] - node.js network app framework.
 
@@ -24,6 +25,12 @@ $ node bot.js
 ``` 
 
 
+[node.js]: <http://nodejs.org>
+[Three.js]: <https://threejs.org/>
+[jQuery]: <http://jquery.com>
+[express]: <http://expressjs.com>
+[socket.io]: <https://socket.io>
+[request]: <https://github.com/request/request>
 
 <p align="center">
   <img src="https://pbs.twimg.com/profile_images/766745282201595904/aYLcH3u_.jpg" width="350"/>
