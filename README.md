@@ -15,12 +15,12 @@ https://arct.herokuapp.com/
  
 ### Installation
 
-SomeBitBot requires [Node.js](https://nodejs.org/) v4+ to run.
-Install the dependencies and run bot.js
+Arct requires [Node.js](https://nodejs.org/) v4+ to run.
+Install the dependencies and run server.js
 
 ```sh
 $ npm install 
-$ node bot.js
+$ node server.js
 ``` 
 
 
