@@ -1,8 +1,27 @@
 # arct
 Node.js+Socket.io+Three.js 
-This is a small demo using Node.js+Socket.io+Three.js. Open the website on your PC and on your phone. You will able to change the color and  move a Three.JS geometry in real time thanks to Socket.io by using your phone accelerometer. It also features a real time chat.
+This is a demo website using Node.js+Socket.io+Three.js. Open the website on your PC and on your phone. You will able to change the color and  move a Three.JS geometry in real time thanks to Socket.io by using your phone accelerometer. It also features a real time chat.
 
 https://arct.herokuapp.com/
+
+
+
+### Tech
+
+* [socket.io] - Enables real-time bidirectional event-based communication
+* [node.js] - Backend Server.
+* [Express] - node.js network app framework.
+
+ 
+### Installation
+
+SomeBitBot requires [Node.js](https://nodejs.org/) v4+ to run.
+Install the dependencies and run bot.js
+
+```sh
+$ npm install 
+$ node bot.js
+``` 
 
 
 
