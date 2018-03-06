@@ -22,6 +22,7 @@ Install the dependencies and run server.js
 $ npm install 
 $ node server.js
 ``` 
+* Navigate to http://localhost:3000/
 
 
 [node.js]: <http://nodejs.org>
